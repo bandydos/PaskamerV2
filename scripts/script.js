@@ -32,10 +32,6 @@ class Person {
 
   gender = '';
 
-  get heightCategories() {
-    return [];
-  }
-
   get heightBreakpoints() {
     return [];
   }
@@ -53,8 +49,7 @@ class Person {
   }
 
   getHeightCategory() {
-    const heightIndex = getIndexByBreakpoints(this.heightBreakpoints, this.height);
-    return this.heightCategories[heightIndex];
+    return getIndexByBreakpoints(this.heightBreakpoints, this.height);
   }
 
   getBMI(){
@@ -103,10 +98,6 @@ class Person {
 class Male extends Person {
   gender = 'm';
 
-  get heightCategories() {
-    return [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  }
-
   get heightBreakpoints() {
     return [146, 153, 160, 167, 174, 181, 189, 196, 203]; // 9 values for height
   }
@@ -114,10 +105,6 @@ class Male extends Person {
 
 class Female extends Person {
   gender = 'f';
-
-  get heightCategories() {
-    return [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  }
 
   get heightBreakpoints() {
     return [145, 150, 155, 160, 165, 170, 180, 185, 190];
